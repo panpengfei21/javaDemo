@@ -1,4 +1,4 @@
-package com.ppf.demo.channel;
+package com.ppf.demo.channel.fileChannel;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +14,9 @@ public class FileChannelDemo {
     public static void main(String[] args) throws Exception{
         String filePath = "/Users/panpengfei/Desktop/a.txt";
         //write(filePath);
-        read(filePath);
+        //read(filePath);
+
+        copyFile("/Users/panpengfei/Desktop/a.png","/Users/panpengfei/Desktop/b.png");
     }
 
     /**
@@ -68,5 +70,32 @@ public class FileChannelDemo {
 
         //5：打印
         System.out.println(new String(buffer.array()));
+
+        //6：关闭
+        is.close();
+    }
+
+    /**
+     * 拷贝文件
+     * @param src 源文件
+     * @param dst 目标地址
+     * @throws IOException
+     */
+    static void copyFile(String src,String dst) throws IOException {
+
+        //1:打开输入输出流
+        FileInputStream is = new FileInputStream(src);
+        FileOutputStream os = new FileOutputStream(dst);
+
+        //2：分别打开channel
+        FileChannel isChannel = is.getChannel();
+        FileChannel osChannel = os.getChannel();
+
+        //3：把输入channel数据输到输出channel(就是数据直接从输入通道转到输出通道)
+        isChannel.transferTo(0,isChannel.size(),osChannel);
+
+        //4：关闭流
+        is.close();
+        os.close();
     }
 }
