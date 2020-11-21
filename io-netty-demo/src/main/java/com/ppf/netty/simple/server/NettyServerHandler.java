@@ -1,12 +1,10 @@
-package com.ppf.nio.simple.server;
+package com.ppf.netty.simple.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
-
-import java.nio.charset.Charset;
 
 /**
  * 自定义一个Handler,需要继承netty里的某个HandlerAdapter

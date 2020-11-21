@@ -20,7 +20,7 @@ public class ZcClient {
             }
         }
 
-        String fileName = "io-nio-demo/src/main/resources/a.txt";
+        String fileName = "io-netty-demo/src/main/resources/a.txt";
         FileChannel fc = new FileInputStream(fileName).getChannel();
 
         // 这里也是零拷贝，

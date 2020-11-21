@@ -86,7 +86,7 @@ public class ZcServer {
         private SocketChannel sc;
         private Selector selector;
         //文件位置
-        private String fileName = "io-nio-demo/src/main/resources/b.txt";
+        private String fileName = "io-netty-demo/src/main/resources/b.txt";
         //文件输出输
         private FileOutputStream fos ;
         //文件开始写的位置
