@@ -11,7 +11,8 @@
 
     <modules>
         <module>io-bio-demo</module>
-        <module>nio-demo</module>
+        <module>io-nio-demo</module>
+        <module>io-netty-demo</module>
     </modules>
 
     <properties>
