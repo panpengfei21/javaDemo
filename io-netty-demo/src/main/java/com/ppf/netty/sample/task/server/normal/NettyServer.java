@@ -1,4 +1,4 @@
-package com.ppf.netty.task.server.normal;
+package com.ppf.netty.sample.task.server.normal;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

@@ -1,4 +1,4 @@
-package com.ppf.netty.task.server.schedule;
+package com.ppf.netty.sample.task.server.schedule;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

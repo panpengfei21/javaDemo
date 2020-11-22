@@ -1,4 +1,4 @@
-package com.ppf.netty.task.client;
+package com.ppf.netty.sample.task.client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

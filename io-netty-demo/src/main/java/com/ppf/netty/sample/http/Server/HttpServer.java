@@ -1,4 +1,4 @@
-package com.ppf.netty.http.Server;
+package com.ppf.netty.sample.http.Server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -6,13 +6,12 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.GenericFutureListener;
 
 
 /**
- * 有些浏览器，对于http请求，非80,8080端口的。发不出去。
- * 直接用post man测试
+ * 有些浏览器，对于http请求，8000以下端口的。发不出去。
+ * 1：换成8000或以上的端口。
+ * 2：直接用post man测试
  */
 public class HttpServer {
     public static void main(String[] args) throws InterruptedException {
@@ -32,7 +31,7 @@ public class HttpServer {
                     .childHandler(new ServerInitializer());
 
             //3:监听端口
-            ChannelFuture cf = sb.bind(6666).sync();
+            ChannelFuture cf = sb.bind(8000).sync();
 
             //4:关闭监听
             cf.channel().closeFuture().sync();
