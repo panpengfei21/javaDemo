@@ -1,4 +1,4 @@
-package com.ppf.netty.sample.groupChat4.server.group;
+package com.ppf.netty.sample.groupChat4.version0.server.group;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

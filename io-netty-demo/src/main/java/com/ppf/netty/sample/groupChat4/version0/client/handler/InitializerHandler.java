@@ -1,6 +1,6 @@
-package com.ppf.netty.sample.groupChat4.client.handler;
+package com.ppf.netty.sample.groupChat4.version0.client.handler;
 
-import com.ppf.netty.sample.groupChat4.client.GCClient;
+import com.ppf.netty.sample.groupChat4.version0.client.GCClient;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 

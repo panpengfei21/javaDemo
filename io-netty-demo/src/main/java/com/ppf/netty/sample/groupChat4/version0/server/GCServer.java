@@ -1,6 +1,6 @@
-package com.ppf.netty.sample.groupChat4.server;
+package com.ppf.netty.sample.groupChat4.version0.server;
 
-import com.ppf.netty.sample.groupChat4.server.channelHandler.InitializerHandler;
+import com.ppf.netty.sample.groupChat4.version0.server.channelHandler.InitializerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;

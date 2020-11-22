@@ -1,4 +1,4 @@
-package com.ppf.netty.sample.groupChat4.client.handler;
+package com.ppf.netty.sample.groupChat4.version0.client.handler;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
