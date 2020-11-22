@@ -1,4 +1,4 @@
-package com.ppf.netty.sample.task.client;
+package com.ppf.netty.sample.task2.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -27,7 +27,7 @@ public class NettyClient {
             System.out.println("客户端准备好了...");
 
             //3：连接服务器
-            ChannelFuture cf = bootstrap.connect("127.0.0.1", 6666).sync();
+            ChannelFuture cf = bootstrap.connect("127.0.0.1", 8000).sync();
             //4：对关闭通道进行监听
             cf.channel().closeFuture().sync();
         }finally {

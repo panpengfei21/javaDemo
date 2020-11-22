@@ -1,4 +1,4 @@
-package com.ppf.netty.sample.http.Server;
+package com.ppf.netty.sample.http3.Server;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;

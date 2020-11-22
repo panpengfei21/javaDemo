@@ -1,4 +1,4 @@
-package com.ppf.netty.sample.task.server.schedule;
+package com.ppf.netty.sample.task2.server.schedule;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -46,14 +46,14 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
     }
 
     /**
-     * 没有把耗时的事提交到even loop的schedule task queue.会阻塞当前线程.
+     * 没有把耗时的事提交到even loop的schedule task2 queue.会阻塞当前线程.
      */
     private void noTaskQueue(ChannelHandlerContext ctx, Object msg) throws InterruptedException {
         doSomething(ctx, "🐱🐱🐱1");
     }
 
     /**
-     * 把耗时的事异步处理,放在schedule task queue里
+     * 把耗时的事异步处理,放在schedule task2 queue里
      * 适用场景：先告诉客户端，我已经收到信息了。
      */
     private void hasTaskQueue(ChannelHandlerContext ctx, Object msg) {

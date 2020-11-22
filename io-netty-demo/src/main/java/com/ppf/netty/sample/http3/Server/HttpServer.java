@@ -1,4 +1,4 @@
-package com.ppf.netty.sample.http.Server;
+package com.ppf.netty.sample.http3.Server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
