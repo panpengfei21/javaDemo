@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var socket;
+
+    if (window.WebSocket) {//是否支持web socket编程
+        // 创建socket连接
+        socket = new WebSocket("ws://localhost:8000/hello")
+
+        // 有消息进来了
+        socket.onmessage = function (ev) {
+            var res = document.getElementById("responseText");
+            res.value = res.value + "\n" + ev.data;
+        }
+
+        // 已经连接了
+        socket.onopen = function (ev) {
+            var res = document.getElementById("responseText");
+            res.value = "连接成功..."
+        }
+
+        // 连接断开了。
+        socket.onclose = function (ev) {
+            var res = document.getElementById("responseText");
+            res.value += "\n" + "断开连接了";
+        }
+
+    }else {
+        alert("不支持web socket")
+    }
+
+    function send(msg) {
+        if (!window.WebSocket) {
+            return;
+        }
+        if (WebSocket.OPEN == socket.readyState) {
+            socket.send(msg);
+            document.getElementById("AA").value = "";
+        }
+    }
+
+</script>
+
+<form onsubmit="return false">
+    <textarea id="AA" name="message" style="width: 300px;height: 300px;"></textarea>
+    <input type="button" value="send" onclick="send(this.form.message.value)">
+
+    <textarea id="responseText" style="width: 300px;height: 300px;"></textarea>
+    <input type="button" value="clear" onclick="document.getElementById('responseText').value = ''">
+</form>
+
+</body>
+</html>
