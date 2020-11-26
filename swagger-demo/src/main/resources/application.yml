@@ -1,0 +1,13 @@
+server:
+  servlet:
+    context-path: /mvc
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        use-model-v3: false #必须的
+    swagger-ui:
+      #访问swagger-ui时放在context-path后，/swagger-ui前的
+      #http://localhost:8080/mvc/documentation/swagger-ui/
+      base-url: /documentation

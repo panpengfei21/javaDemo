@@ -13,6 +13,7 @@
         <module>io-bio-demo</module>
         <module>io-nio-demo</module>
         <module>io-netty-demo</module>
+        <module>swagger-demo</module>
     </modules>
 
     <properties>

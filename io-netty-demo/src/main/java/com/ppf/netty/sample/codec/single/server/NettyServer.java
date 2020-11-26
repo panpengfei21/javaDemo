@@ -1,6 +1,6 @@
-package com.ppf.netty.sample.codec.server;
+package com.ppf.netty.sample.codec.single.server;
 
-import com.ppf.netty.sample.codec.proto.StudentPOJO;
+import com.ppf.netty.sample.codec.single.proto.StudentPOJO;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

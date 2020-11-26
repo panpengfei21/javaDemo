@@ -1,8 +1,7 @@
-package com.ppf.netty.sample.codec.client;
+package com.ppf.netty.sample.codec.single.client;
 
-import com.ppf.netty.sample.codec.proto.StudentPOJO;
+import com.ppf.netty.sample.codec.single.proto.StudentPOJO;
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;

@@ -1,4 +1,4 @@
-package com.ppf.netty.sample.codec.client;
+package com.ppf.netty.sample.codec.single.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

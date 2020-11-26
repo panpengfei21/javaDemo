@@ -1,0 +1,32 @@
+syntax = "proto3";  //语法版本
+
+option optimize_for = SPEED; //快速编译
+option java_package = "com.ppf"; //指定生成的文件放到哪个包下
+option java_outer_classname = "MyDataInfo"; //外部类
+
+message Data {
+
+    //定义一个枚举,用来表示要传输的数据类型
+    enum DataType {
+        StudentType = 0; //一定要从0开始
+        WorkerType = 1;
+    }
+    //用来标识传哪个类型
+    DataType type = 1;
+
+    //数据体.从中选一个对应上面的枚举。
+    oneof dataBody {
+       Student student = 2;
+       Worker worker = 3;
+    }
+}
+
+message Student {
+    int32 id = 1; //1号位：id
+    string name = 2; //2号位： name
+}
+
+message Worker {
+    string name = 1;
+    int32 age = 2;
+}

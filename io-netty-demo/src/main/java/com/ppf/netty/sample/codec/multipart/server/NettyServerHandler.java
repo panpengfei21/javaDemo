@@ -1,17 +1,15 @@
-package com.ppf.netty.sample.codec.server;
+package com.ppf.netty.sample.codec.multipart.server;
 
-import com.ppf.netty.sample.codec.proto.StudentPOJO;
-import io.netty.buffer.ByteBuf;
+import com.ppf.MyDataInfo;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
 
 /**
  * 自定义一个Handler,需要继承netty里的某个HandlerAdapter
  */
-public class NettyServerHandler extends SimpleChannelInboundHandler<StudentPOJO.Student> {
+public class NettyServerHandler extends SimpleChannelInboundHandler<MyDataInfo.Data> {
 
     /**
      * 读取pipeline里传输过来的数据
@@ -20,8 +18,23 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<StudentPOJO.
      * @throws Exception
      */
     @Override
-    public void channelRead0(ChannelHandlerContext ctx, StudentPOJO.Student msg) throws Exception {
-        System.out.println("客户端 " + ctx.channel().remoteAddress() + " 说：id>" + msg.getId() + "  name>" + msg.getName());
+    public void channelRead0(ChannelHandlerContext ctx, MyDataInfo.Data msg) throws Exception {
+        switch (msg.getType()) {
+            case StudentType:{
+                MyDataInfo.Student student = msg.getStudent();
+                System.out.println("student:id > " + student.getId() + " name>" + student.getName());
+            }
+                break;
+            case WorkerType:{
+                MyDataInfo.Worker worker = msg.getWorker();
+                System.out.println("worker:name >" + worker.getName() + " aget>" + worker.getAge());
+            }
+                break;
+            case UNRECOGNIZED:{
+                System.out.println("未知类型");
+            }
+                break;
+        }
     }
 
     @Override
